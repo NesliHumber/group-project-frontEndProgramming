@@ -1,0 +1,31 @@
+/* NavBar.module.css */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primaryDark); /* CSS variables */
+    color: white;
+  }
+  
+  .logo {
+    font-size: var(--largeFontSize); /* CSS variables */
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .linkContainer {
+    display: flex;
+    gap: 1.5rem; 
+  }
+  
+  .link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .link:hover {
+    color: var(--secondaryLight); /* CSS variables */
+  }
