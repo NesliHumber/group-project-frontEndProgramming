@@ -1,73 +1,98 @@
 .homeContainer {
-    text-align: center;
-    padding: 2rem;
-    font-family: Arial, sans-serif;
-  }
-  
-  .roleSelection {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-  }
-  
-  .roleBtn {
-    padding: 1rem 2rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .roleBtn:hover {
-    background-color: #0056b3;
-  }
-  
-  .roleActions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .actionBtn {
-    padding: 0.8rem 1.5rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .actionBtn:hover {
-    background-color: #218838;
-  }
-  
-  .subscriptionSection {
-    margin-top: 3rem;
-  }
-  
-  .subscriptionLink {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .subscriptionLink:hover {
-    text-decoration: underline;
-  }
+  text-align: center;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
 
-  .backBtn {
-    padding: 0.8rem 1.5rem;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1.5rem;
-  }
-  
-  .backBtn:hover {
-    background-color: #c82333;
-  }
+.roleSelection {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.roleBtn {
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.roleBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Card-like container for each role's actions */
+.roleActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5rem auto;
+  padding: 2rem 2.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1.5px solid #e3eafc;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  max-width: 400px;
+  width: 100%;
+  gap: 1rem; /* space between children (buttons) */
+}
+
+/* Action buttons: stacked with space between */
+.actionBtn {
+  padding: 0.8rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+/* Add extra space between action buttons if gap is not supported */
+.actionBtn:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.actionBtn:hover {
+  background-color: #218838;
+}
+
+.subscriptionSection {
+  margin-top: 3rem;
+}
+
+.subscriptionLink {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.subscriptionLink:hover {
+  text-decoration: underline;
+}
+
+.backBtn {
+  padding: 0.8rem 1.5rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.backBtn:hover {
+  background-color: #c82333;
+}
