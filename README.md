@@ -1,40 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# HealthTrack Patient Health Management System
 
-## Getting Started
+## Description
 
-First, run the development server:
+HealthTrack is a React.js-based platform for managing patient health records, streamlining workflows for healthcare providers, and improving patient outcomes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Installation](#installation)
+- [Features](#features)
+- [Component Overview](#component-overview)
+- [Routing Structure](#routing-structure)
+- [State Management](#state-management)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Installation
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To set up the project locally:
+git clone <https://github.com/NesliHumber/group-project-frontEndProgramming.git>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Role-based landing page
+- Dynamic pricing plans
+- Testimonials and success stories
+- FAQ section
+- Contact form with submission confirmation
+- Centralized API service
 
-## Learn More
+## Component Overview
 
-To learn more about Next.js, take a look at the following resources:
+| Component/Page                | Description                                                                                                       |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **HomePage / RoleSelector**   | Landing page to select a role (physician, nurse, patient). Manages the selected role state using React Context.   |
+| **PricingPage**               | Displays subscription plans fetched from the API. Handles loading and error states.                               |
+| **PricingDetailPage**         | Shows detailed information about a specific pricing plan, using dynamic routing based on the plan name.           |
+| **TestimonialsPage**          | Lists testimonials and success stories fetched from the API.                                                      |
+| **FAQPage**                   | Presents frequently asked questions, fetched from the API. Includes a form for submitting new questions.          |
+| **ContactPage**               | Contact form for user inquiries. On submission, redirects to the Thank You page.                                  |
+| **ThankYouPage**              | Simple confirmation page displayed after successful contact form submission.                                      |
+| **AboutPage**                 | Describes the project’s vision, history, and leadership team.                                                     |
+| **API Service**               | Contains functions to fetch FAQs, pricing plans, testimonials, and success stories. Also handles contact form submission.|
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Routing Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Route                | Component/Page          | Purpose                                                                                 |
+| -------------------- | ----------------------- | --------------------------------------------------------------------------------------- |
+| `/`                  | HomePage/RoleSelector   | Entry point for selecting user role.                                                    |
+| `/pricing`           | PricingPage             | Displays a list of available subscription plans.                                        |
+| `/pricing/[name]`    | PricingDetailPage       | Shows details for a specific pricing plan using a dynamic route.                        |
+| `/testimonials`      | TestimonialsPage        | Displays user testimonials and success stories.                                         |
+| `/faq`               | FAQPage                 | Presents frequently asked questions.                                                    |
+| `/contact`           | ContactPage             | Contact form for user inquiries.                                                        |
+| `/thank-you`         | ThankYouPage            | Confirmation page after submitting the contact form.                                    |
+| `/about`             | AboutPage               | Provides background information about the project and the team behind it.               |
 
-## Deploy on Vercel
+## State Management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application uses various state management techniques:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+-   **`useState` Hook:**  Used in components like `PricingPage`, `TestimonialsPage`, and `FAQPage` for managing local component state, such as storing fetched data (`plans`, `testimonials`, `faqs`), handling loading states (`loading`), and managing errors (`error`).
+-   **`useEffect` Hook:**  Works in conjunction with `useState` to handle side effects. Examples include fetching pricing plans in `PricingPage`, testimonials and success stories in `TestimonialsPage`, and FAQs in `FAQPage`.
+-   **React Context API:**  Employed in the `HomePage / RoleSelector` to manage the global `selectedRole` state, making it accessible throughout the application. This allows role-based rendering and navigation based on the user's selected role.
+-   **API Service (`/services/api.js`):** Centralizes data fetching.
+
